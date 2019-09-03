@@ -14,9 +14,21 @@ namespace StackOverflow.DumpReaderApi.Tests
         }
 
         [Test]
-        public void ShouldCountContributorTypes()
+        public void ShouldQueryAllContributorTypes()
         {
             Assert.That(DumpReaderApiTestConfiguration.Resolve<IRepository<ContributorType>>().QueryAll().Count(), Is.EqualTo(2));
+        }
+
+        [Test]
+        public void ShouldQueryAllDocTags()
+        {
+            Assert.That(DumpReaderApiTestConfiguration.Resolve<IRepository<DocTag>>().QueryAll().Count(), Is.EqualTo(1145));
+        }
+
+        [Test]
+        public void ShouldQueryAllDocTagVersion()
+        {
+            Assert.That(DumpReaderApiTestConfiguration.Resolve<IRepository<DocTagVersion>>().QueryAll().Count(), Is.EqualTo(5956));
         }
     }
 }

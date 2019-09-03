@@ -16,6 +16,8 @@ namespace StackOverflow.DumpReaderApi
                 .SingleInstance();
             builder.RegisterType<JsonFileDao>().AsImplementedInterfaces().SingleInstance();
             builder.RegisterType<ContributorTypeRepository>().AsImplementedInterfaces().SingleInstance();
+            builder.RegisterType<DocTagRepository>().AsImplementedInterfaces().SingleInstance();
+            builder.RegisterType<DocTagVersionRepository>().AsImplementedInterfaces().SingleInstance();
 
             base.Load(builder);
 
